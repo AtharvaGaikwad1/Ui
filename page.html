@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HTML</title>
+<style>	
+
+    .column {
+    float: left;
+    width: 25%;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+    .column4 {
+	  flex: 33.33%;
+	  height: 200px;
+      width: 100px;
+	  padding: 10px;
+	  margin: 5px;
+	  /* background-color: #cccccc; */
+      border: 10 px;
+      border-color: black;
+	  text-align: center;
+	}
+	.container {
+	   display: flex;
+       border: 5px solid black
+	}	
+    .gauge {
+    width: 100%;
+    max-width: 250px;
+    font-family: "Roboto", sans-serif;
+    font-size: 32px;
+    color: #004033;
+    }
+
+    .gauge__body {
+    width: 100%;
+    height: 0;
+    padding-bottom: 50%;
+    background: #b4c0be;
+    position: relative;
+    border-top-left-radius: 100% 200%;
+    border-top-right-radius: 100% 200%;
+    overflow: hidden;
+    }
+
+    .gauge__fill {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: inherit;
+    height: 100%;
+    background: #009578;
+    transform-origin: center top;
+    transform: rotate(0.25turn);
+    transition: transform 0.2s ease-out;
+    }
+
+    .gauge__cover {
+    width: 75%;
+    height: 150%;
+    background: #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    /* Text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 25%;
+    box-sizing: border-box;
+    }
+
+    .kpi-container {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            padding: 20px;
+            text-align: center;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style for KPI Value */
+        .kpi-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Style for KPI Label */
+        .kpi-label {
+            font-size: 16px;
+            color: #666;
+            margin-top: 8px;
+        }
+
+        /* Style for the container to display in a single row */
+        .kpi-container-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+</style>
+</head>  
+<body>
+    
+	<div class="container" style="border: 5px;">
+	   <div class="column4">
+	     <!-- <h2> First column </h2> -->
+         <img src="logo.png" alt="logo">
+		 <!-- <p> This is first column of our grid system</p> -->
+	   </div>
+	   <div class="column4" >
+	     <h2> Critical Curation Job Status as on                 </h2>
+		 <p> This is second column of our grid system            </p>
+	   </div>
+       <!-- <div class="gauge-container">
+        <div class="gauge-fill"></div>
+        <div class="gauge-heading">
+          
+        </div> -->
+        <!-- <div class="gauge-container">
+            <div class="gauge-fill"></div>
+            <div class="gauge-heading">
+              <h2>Your Gauge Heading</h2>
+            </div>
+          </div> -->
+
+        <div class="column4">
+        <!-- <h2> First column </h2> -->
+        <div class="gauge">
+            <div class="gauge__body">
+                <div class="gauge__fill"></div>
+                <div class="gauge__cover"></div>     
+            </div>
+            <h3>30%</h3>
+            
+           
+        <!-- <p> This is first column of our grid system</p> -->
+        </div>
+        <br>
+       
+	</div>
+    <br>
+    <div class="kpi-container-row">
+
+        <!-- KPI Container 1 -->
+        <div class="kpi-container">
+            <div class="kpi-value">75%</div>
+            <div class="kpi-label">Total Jobs</div>
+        </div>
+
+        <!-- KPI Container 2 -->
+        <div class="kpi-container">
+            <div class="kpi-value">75%</div>
+            <div class="kpi-label">Pending Jobs</div>
+        </div>
+
+        <!-- KPI Container 3 -->
+        <div class="kpi-container">
+            <div class="kpi-value">75%</div>
+            <div class="kpi-label">Success</div>
+        </div>
+
+        <!-- KPI Container 4 -->
+        <div class="kpi-container">
+            <div class="kpi-value">75%</div>
+            <div class="kpi-label">In Progress</div>
+        </div>
+
+    </div>
+
+
+    
+
+    
+    
+    
+</body>
+</html>
